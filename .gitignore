@@ -1,4 +1,5 @@
 /.idea/
 composer.phar
 /vendor/
+/output/
 config/config.yml
