@@ -1,0 +1,13 @@
+mx5:
+  username: yourusername
+  password: yourpassword
+  baseUri: http://forum.mx-5-sportive.com/dc/
+  baseEndpoint: dcboard.php
+  forumId: 214 # The forum which contains all polls
+
+database:
+  name: dbname
+  username: dbusername
+  password: dbpassword
+  host: localhost
+  port: 3306
