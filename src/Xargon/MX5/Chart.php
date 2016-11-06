@@ -27,12 +27,12 @@ class Chart {
                 }
             }
 
-            usort($answers, array('Chart', function ($a, $b) {
+            usort($answers, function ($a, $b) {
                 if ($a['votes'] == $b['votes']) {
                     return strcmp(strtolower($a['text']), strtolower($b['text']));
                 }
                 return ($a['votes'] > $b['votes']) ? -1 : 1;
-            }));
+            });
 
             foreach ($answers as $answer) {
                 $answerText = sprintf(

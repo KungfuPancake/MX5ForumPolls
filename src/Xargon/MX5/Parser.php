@@ -61,14 +61,14 @@ class Parser {
      * @return array A list of thread IDs
      */
     public function getPollIds($forumId) {
-        $pageCount = 0;
+        $pageCount = 1;
         $pollIds = array();
 
         $response = $this->client->get($this->config->get('mx5.baseEndpoint'), array(
-           'query' => array(
-               'az' => 'show_topics',
-               'forum' => $forumId
-           )
+            'query' => array(
+                'az' => 'show_topics',
+                'forum' => $forumId
+            )
         ));
 
         $domDocument = new \DOMDocument();
@@ -88,11 +88,13 @@ class Parser {
         }
 
         if ($pageCount > 0) {
-            for ($currentPage = 1; $currentPage <= $pageCount; $currentPage++) {
+            for ($currentPage = 0; $currentPage < $pageCount; $currentPage++) {
                 $response = $this->client->get($this->config->get('mx5.baseEndpoint'), array(
-                    'az' => 'show_topics',
-                    'forum' => $forumId,
-                    'page' => $currentPage
+                    'query' => array(
+                        'az' => 'show_topics',
+                        'forum' => $forumId,
+                        'page' => ($currentPage + 1)
+                    )
                 ));
 
                 $domDocument = new \DOMDocument();
