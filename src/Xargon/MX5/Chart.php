@@ -36,7 +36,7 @@ class Chart {
 
             foreach ($answers as $answer) {
                 $answerText = sprintf(
-                    '%s (%d/%d/%d)',
+                    '%s (%s/%s/%s)',
                     $answer['text'],
                     $answer['last60'],
                     $answer['last720'],
