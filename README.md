@@ -1,3 +1,5 @@
+## Archived for reference - the forum does not exist anymore
+
 # MX5 forum poll chart maker
 ## Installation
 1. Install dependencies with "composer install".
